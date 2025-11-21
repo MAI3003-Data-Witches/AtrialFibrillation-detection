@@ -1,2 +1,3 @@
-Model,Hyperparameters,Accuracy,F1 Score,Precision,Recall,AUC
-a,b,c,d,e,f,g
+Model,Hyperparameters,Accuracy,F1 Score,Precision,Recall,ROC,ROC_AUC,cm
+"LogisticRegression(class_weight='balanced', max_iter=1000, multi_class='auto')","multi_class='auto', max_iter=1000, class_weight='balanced'",0.31788079470198677,0.41366223908918404,0.9008264462809917,0.2684729064039409,"(array([0.        , 0.25531915, 1.        ]), array([0.        , 0.26847291, 1.        ]), array([inf,  1.,  0.]))",0.5065768787338853,"[[0.74468085 0.25531915]
+ [0.73152709 0.26847291]]"
