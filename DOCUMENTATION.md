@@ -174,9 +174,9 @@ The notebook consists of **142 cells** organized into the following major sectio
 - **Cell 119**: Logistic Regression implementation
 - **Cell 121**: Random Forest section
 - **Cell 122**: Random Forest implementation
-- **Cell 124**: K-Nearest Neighbors (KNN) implementation
-- **Additional**: Radius Neighbors Classifier implementation
-- **Additional**: Multi-Layer Perceptron (MLP) Neural Network implementation
+- **Cell 124**: K-Nearest Neighbors (KNN) implementation with hyperparameter tuning
+- **Extended cells**: Radius Neighbors Classifier implementation with various radius values
+- **Extended cells**: Multi-Layer Perceptron (MLP) Neural Network implementation
 
 ### 10. Results (Cell 125-126)
 - **Cell 125**: Results comparison
@@ -349,8 +349,9 @@ The notebook consists of **142 cells** organized into the following major sectio
 ### Model Variables
 - **`model_LR`**: Logistic Regression model
   - Parameters: `multi_class='auto'`, `max_iter=1000`, `class_weight='balanced'`
-- **`model_RF`**: Random Forest Classifier
-  - Parameters: `max_depth=5`, `random_state=3003`
+- **`model_RF`**: Random Forest Classifier variations
+  - Parameters tested: `max_depth` in [4, 5, 100], `random_state=3003`
+  - Primary configuration: `max_depth=5`
 - **`model_KNN`**: K-Nearest Neighbors Classifier
   - Parameters: `n_neighbors` varied from 1-15 for optimization
 - **`model_RNC`**: Radius Neighbors Classifier
