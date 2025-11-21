@@ -570,6 +570,8 @@ The project tested multiple machine learning models with the following approache
 5. **Multi-Layer Perceptron (MLP)**: Neural network with two hidden layers
 
 ### Performance Observations
+- Logistic regression, the baseline, has achieved F1 score of 0.76. Used to compare if more advanced models show more precise results
+TODO: Edit, not true anymore:
 - KNN models showed strong performance with F1 scores around 0.93
 - Random Forest with max_depth=5 achieved perfect recall (1.0) on the test set
 - MLP Neural Network achieved similar performance to KNN models
