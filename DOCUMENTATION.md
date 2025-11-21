@@ -1,3 +1,7 @@
+---
+permalink: /
+---
+
 # Data Witches Project 2 - Complete Documentation
 
 ## Project Overview
