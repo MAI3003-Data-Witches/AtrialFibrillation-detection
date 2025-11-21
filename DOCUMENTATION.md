@@ -572,7 +572,9 @@ The project tested multiple machine learning models with the following approache
 ### Performance Observations
 - Logistic regression with all features, the baseline, has achieved F1 score of 0.77 and AUC of 0.93. The differnce was caused by poor precision. Used further to compare if more advanced models show more precise results.
 - Logistic regression with top 10 features has achieved F1 score of 0.76 and AUC of 0.94. As this is a simplier model than full LR, it ranks higher.
-- 
+- Logistic regression with dropping correlated features above 0.8 has has achieved F1 score of 0.78 and AUC of 0.93.
+- Logistic regression with added features and normalised outliers and kept parent features has has achieved F1 score of 0.80 and AUC of 0.95.
+- Logistic regression with added features and normalised outliers and dropped parent features has has achieved F1 score of 0.76 and AUC of 0.93.
 TODO: Edit, not true anymore:
 - KNN models showed strong performance with F1 scores around 0.93
 - Random Forest with max_depth=5 achieved perfect recall (1.0) on the test set
