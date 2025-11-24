@@ -9,3 +9,4 @@ scikit-learn
 shap
 statsmodels
 neurokit2
+tqdm
