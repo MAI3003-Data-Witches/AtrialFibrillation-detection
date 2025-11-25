@@ -10,3 +10,4 @@ shap
 statsmodels
 neurokit2
 tqdm
+sympy
