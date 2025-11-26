@@ -34,8 +34,8 @@ This project implements an Atrial Fibrillation classification system using ECG (
 - `Physionet2017TrainingData.csv`: Raw ECG signal data (converted to mV by multiplying by 1000)
 - `Physionet2017TrainingLabels.csv`: Classification labels
 - `train.csv`: Secondary dataset for testing ML pipeline
-- `hrv_train.csv`: Preprocessed HRV features for training set (72 features, ~3,620 samples)
-- `hrv_test.csv`: Preprocessed HRV features for test set (72 features, ~906 samples)
+- `hrv_train.csv`: Preprocessed HRV features for training set (72 features, 3,619 samples)
+- `hrv_test.csv`: Preprocessed HRV features for test set (72 features, 905 samples)
 
 ### Data Split
 - Training set: 80%
@@ -188,14 +188,14 @@ The notebook consists of **193 cells** organized into the following major sectio
   - Augmented features with dropped parent features
 - **Cell 121**: Random Forest section
 - **Cell 122-135**: Random Forest implementation with varying max_depth (1-14)
-- **Cell 124-138**: K-Nearest Neighbors (KNN) implementation with hyperparameter tuning (n_neighbors 1-15)
-- **Cell 140-147**: Radius Neighbors Classifier implementation with various radius values (0.5-10.0)
-- **Cell 148**: Nearest Centroid Classifier implementation
-- **Cell 149**: Multi-Layer Perceptron (MLP) Neural Network implementation
-- **Cell 150**: Gradient Boosting Classifier implementation
-- **Cell 151-160**: AdaBoost Classifier with varying n_estimators (50-10000)
-- **Cell 161**: Voting Classifier (ensemble of LR, RF, KNN, AdaBoost)
-- **Cell 162**: Gradient Boosting Classifier with tuned hyperparameters
+- **Cell 136-150**: K-Nearest Neighbors (KNN) implementation with hyperparameter tuning (n_neighbors 1-15)
+- **Cell 151-158**: Radius Neighbors Classifier implementation with various radius values (0.5-10.0)
+- **Cell 159**: Nearest Centroid Classifier implementation
+- **Cell 160**: Multi-Layer Perceptron (MLP) Neural Network implementation
+- **Cell 161**: Gradient Boosting Classifier implementation
+- **Cell 162-171**: AdaBoost Classifier with varying n_estimators (50-10000)
+- **Cell 172**: Voting Classifier (ensemble of LR, RF, KNN, AdaBoost)
+- **Cell 173**: Gradient Boosting Classifier with tuned hyperparameters
 
 ### 10. Results (Cell 179-193)
 - **Cell 180-190**: Results comparison and visualization
@@ -571,8 +571,8 @@ AtrialFibrillation-detection/
 
 ### Using Preprocessed HRV Features
 The repository includes pre-computed HRV features to skip the computationally expensive feature extraction:
-- **`hrv_train.csv`**: 72 HRV features extracted from training ECG signals
-- **`hrv_test.csv`**: 72 HRV features extracted from test ECG signals
+- **`hrv_train.csv`**: 72 HRV features extracted from training ECG signals (3,619 samples)
+- **`hrv_test.csv`**: 72 HRV features extracted from test ECG signals (905 samples)
 - These can be loaded directly to start from the modeling phase
 
 ### Challenge Notebook
@@ -623,12 +623,12 @@ The project tested **57 unique machine learning models** across multiple algorit
 3. **AdaBoost (10 variants)**: Boosting ensemble with n_estimators from 50-10000
 4. **Radius Neighbors Classifier (8 variants)**: Distance-based classifier with varying radius (0.5-10.0)
 5. **Logistic Regression (5 variants)**: Binary classifier with feature engineering variations
-6. **Gradient Boosting (2 variants)**: Gradient boosting with default and tuned hyperparameters (note: 1 duplicate in records)
+6. **Gradient Boosting (2 variants)**: Gradient boosting with default and tuned hyperparameters
 7. **Voting Classifier (1 variant)**: Soft voting ensemble combining LR, RF, KNN, and AdaBoost
 8. **Multi-Layer Perceptron (1 variant)**: Neural network with two hidden layers (100, 50)
 9. **Nearest Centroid (1 variant)**: Simple centroid-based classifier
 
-**Total: 57 unique models, 58 records** (one duplicate GradientBoostingClassifier entry in trainingResults.csv)
+**Total: 57 unique models** (Note: trainingResults.csv contains 58 records due to one duplicate GradientBoostingClassifier entry that can be safely ignored)
 
 ### Top Performing Models (by F1 Score)
 1. **Voting Classifier (Ensemble)**: F1=0.8627, Accuracy=0.9685, Precision=0.8713, Recall=0.8544, ROC-AUC=0.9847
@@ -666,9 +666,8 @@ The project tested **57 unique machine learning models** across multiple algorit
 ## Future Enhancements
 
 Based on the notebook structure and current implementation, potential areas for expansion:
-1. ~~Hyperparameter tuning~~ ✓ Completed through extensive manual exploration across 57 model variants
-   - Note: Manual grid exploration was performed rather than automated GridSearchCV
-2. ~~Ensemble methods combining multiple models~~ ✓ Implemented (Voting Classifier)
+1. ✓ **Hyperparameter tuning**: Completed through extensive manual exploration across 57 model variants (manual grid exploration performed rather than automated GridSearchCV)
+2. ✓ **Ensemble methods**: Implemented (Voting Classifier combining multiple models)
 3. Cross-validation for robust performance estimation (currently using single train-test split)
 4. Feature importance analysis for better interpretability
 5. SHAP values for model interpretability
