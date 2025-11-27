@@ -12,3 +12,4 @@ neurokit2
 scipy
 tqdm
 sympy
+pytest
